@@ -1,0 +1,14 @@
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/bin/Debug/net9.0/Task_5
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/bin/Debug/net9.0/Task_5.deps.json
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/bin/Debug/net9.0/Task_5.runtimeconfig.json
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/bin/Debug/net9.0/Task_5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/bin/Debug/net9.0/Task_5.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.AssemblyInfoInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.AssemblyInfo.cs
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.csproj.CoreCompileInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/refint/Task_5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/Task_5.genruntimeconfig.cache
+/Users/mihailprohorov/Desktop/учеба/C#/Task_5/Task_5/obj/Debug/net9.0/ref/Task_5.dll
