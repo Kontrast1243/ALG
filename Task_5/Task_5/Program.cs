@@ -1,108 +1,167 @@
-﻿using System;
-
-namespace contest_1;
-
-class BinHeap {
-    private List<int> heap;
-
-    public BinHeap() {
-        int[] a = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
-        heap = new List<int>(a);
-        int statI = a.Length / 2 - 1;
-        for (int i = statI; i >= 0; i--) Sift_down(i);
+﻿class HeapComparer<T> : IComparer<T> {
+    public int Compare(T x, T y) {
+        return Comparer<T>.Default.Compare(x, y);
     }
+}
+
+class BinHeap<T> {
+    private T[] heap;
+    private HeapComparer<T> comparer;
+    private int size;
+    private int capacity;
+
+    public BinHeap(T[] a) {
+        if (a == null)
+            throw new Exception("Input array cannot be null");
+        capacity = a.Length;
+        size = a.Length;
+        heap = new T[capacity];
+        Array.Copy(a, heap, size);
+        comparer = new HeapComparer<T>();
+        int startIndex = size / 2 - 1;
+        for (int i = startIndex; i >= 0; i--) Sift_down(i);
+    }
+
+    private void Resize() {
+        if (capacity < 64) capacity += 2;
+        else capacity = capacity + (capacity + 1)/2;
+        T[] newHeap = new T[capacity];
+        Array.Copy(heap, newHeap, size);
+        heap = newHeap;
+    }
+
     private void Sift_up(int i) {
         while (i > 0) {
             int parentI = (i - 1) / 2;
-            if (heap[i] > heap[parentI]) {
-                (heap[i], heap[parentI]) = (heap[parentI], heap[i]); i = parentI;
+            if (comparer.Compare(heap[i], heap[parentI]) > 0) {
+                (heap[i], heap[parentI]) = (heap[parentI], heap[i]);
+                i = parentI;
             } 
             else break;
         }
     }
 
     private void Sift_down(int i) {
-        int n =  heap.Count;
-        while (2 * i + 1 < n) {
+        while (2 * i + 1 < size) {
             int left = 2 * i + 1;
             int right = 2 * i + 2;
-            int maxСhild = left;
-            if (right < n && heap[right] > heap[maxСhild]) {
-                maxСhild = right;
+            int maxChild = left;
+            if (right < size && comparer.Compare(heap[right], heap[maxChild]) > 0) {
+                maxChild = right;
             }
-            if (heap[i] >= heap[maxСhild]) break;
-            else {(heap[i], heap[maxСhild]) = (heap[maxСhild], heap[i]); i =  maxСhild;}
+            if (comparer.Compare(heap[i], heap[maxChild]) >= 0) break;
+            else {
+                (heap[i], heap[maxChild]) = (heap[maxChild], heap[i]);
+                i = maxChild;
+            }
         }
     }
 
-    public int Top() {
-        if (heap.Count == 0) 
+    public T Top() {
+        if (size == 0) 
             throw new Exception("Heap is empty");
         return heap[0];
     }
 
-    public void Push(int x) {
-        heap.Add(x);
-        Sift_up(heap.Count - 1);
+    public void Push(T x) {
+        if (size == capacity) Resize();
+        heap[size] = x;
+        Sift_up(size);
+        size++;
     }
     
-    public int Pop() {
-        if (heap.Count == 0)
+    public T Pop() {
+        if (size == 0)
             throw new Exception("Heap is empty");
-        int ans;
-        if (heap.Count == 1) {
-            ans = heap[0];
-            heap.RemoveAt(0);
+        T ans = heap[0];
+        if (size == 1) {
+            size--;
             return ans;
         }
-        int lastElement = heap[heap.Count - 1];
-        heap.RemoveAt(heap.Count - 1);
-        ans = heap[0];
-        heap[0] = lastElement;
+        heap[0] = heap[size - 1];
+        size--;
         Sift_down(0);
         return ans;
     }
 
-    public void Increasing(int i, int v) {
-        if (heap[i] <= v) 
+    public void Increasing(int i, T v) {
+        if (size == 0) 
+            throw new Exception("Heap is empty");
+        if (i < 0 || i >= size)
+            throw new IndexOutOfRangeException("Invalid index");
+        if (comparer.Compare(v, heap[i]) <= 0) 
             throw new Exception("Value is not ok :(");
         heap[i] = v;
         Sift_up(i);
     }
 
-    public void MergeHeaps(BinHeap heap2) {
-        for (int i = 0; i < heap2.Count; i++) {
-            heap2.Push(heap2.Pop());
+    public void MergeHeaps(BinHeap<T> other) {
+        if (other == null)
+            throw new Exception("Heap is empty");
+        int newSize = size + other.size;
+        while (capacity < newSize) Resize();
+        Array.Copy(other.heap, 0, heap, size, other.size);
+        size = newSize;
+        int startIndex = size / 2 - 1;
+        for (int i = startIndex; i >= 0; i--) {
+            Sift_down(i);
         }
     }
     
-    public int Count => heap.Count;
-
-    private int Log2(int num) {
-        int ans = 0;
-        while (num > 0) { ans++; num /= 2;}
-        return ans;
-    }
+    public int Count => size;
+    public bool IsEmpty => size == 0;
 
     public void Print() {
-        if (heap.Count == 0) 
-            throw new Exception("Heap is empty");
-        Console.WriteLine(heap[0]);
-        for (int i = 1; i < heap.Count; i++) {
-            Console.Write($"{heap[i]} ");
-            if (Log2(i) != Log2(i+1)) Console.WriteLine();
+        if (size == 0) {
+            Console.WriteLine("Input array cannot be null");
+            return;
+        }
+        int i = 0;
+        int levelSize = 1;
+        while (i < size) {
+            for (int j = 0; j < levelSize && i < size; j++) {
+                Console.Write($"{heap[i++]} ");
+            }
+            Console.WriteLine();
+            levelSize *= 2;
         }
     }
 }
 
-public class Program
-{
+public class Program {
     static void Main() {
-        
-        Console.WriteLine("Input elements");
-        BinHeap heap = new BinHeap();
-        heap.Print();
+        try {
+            int[] initialArray = { 3, 1, 6, 5, 2, 4 };
+            BinHeap<int> heap = new BinHeap<int>(initialArray);
+            
+            Console.WriteLine("Исходная куча:");
+            heap.Print();
+            Console.WriteLine($"Максимум: {heap.Top()}");
+            Console.WriteLine();
+
+            heap.Push(8);
+            heap.Push(7);
+            Console.WriteLine("После добавления 8 и 7:");
+            heap.Print();
+            Console.WriteLine();
+
+            int max = heap.Pop();
+            Console.WriteLine($"Удален максимум: {max}");
+            heap.Print();
+            Console.WriteLine();
+
+            heap.Increasing(2, 10);
+            Console.WriteLine("После увеличения элемента с индексом 2 до 10:");
+            heap.Print();
+            Console.WriteLine();
+
+            BinHeap<int> otherHeap = new BinHeap<int>(new int[] { 20, 15, 25 });
+            heap.MergeHeaps(otherHeap);
+            Console.WriteLine("После слияния с кучей [20, 15, 25]:");
+            heap.Print();
+            Console.WriteLine();
+        } catch (Exception ex) {
+            Console.WriteLine($"Ошибка: {ex.Message}");
+        }
     }
-
-
 }

@@ -1,0 +1,14 @@
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/bin/Debug/net9.0/lub5
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/bin/Debug/net9.0/lub5.deps.json
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/bin/Debug/net9.0/lub5.runtimeconfig.json
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/bin/Debug/net9.0/lub5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/bin/Debug/net9.0/lub5.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.AssemblyInfoInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.AssemblyInfo.cs
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.csproj.CoreCompileInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/refint/lub5.dll
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/lub5.genruntimeconfig.cache
+/Users/mihailprohorov/Desktop/учеба/C#/lub5/lub5/obj/Debug/net9.0/ref/lub5.dll
