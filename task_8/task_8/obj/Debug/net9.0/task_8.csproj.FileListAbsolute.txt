@@ -1,0 +1,14 @@
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/bin/Debug/net9.0/task_8
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/bin/Debug/net9.0/task_8.deps.json
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/bin/Debug/net9.0/task_8.runtimeconfig.json
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/bin/Debug/net9.0/task_8.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/bin/Debug/net9.0/task_8.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.AssemblyInfoInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.AssemblyInfo.cs
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.csproj.CoreCompileInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/refint/task_8.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/task_8.genruntimeconfig.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_8/task_8/obj/Debug/net9.0/ref/task_8.dll
