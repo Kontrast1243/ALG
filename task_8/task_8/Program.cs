@@ -11,16 +11,16 @@ class MyArrayList<T> {
 
     public int Capacity => capacity;
     
-    public T this[int index] {
+    public T this[int i] {
         get {
-            if (index < 0 || index >= size)
+            if (i < 0 || i >= size)
                 throw new ArgumentOutOfRangeException("Индекс вне диапазона");
-            return elementData[index];
+            return elementData[i];
         }
         set {
-            if (index < 0 || index >= size)
+            if (i < 0 || i >= size)
                 throw new ArgumentOutOfRangeException("Индекс вне диапазона");
-            elementData[index] = value;
+            elementData[i] = value;
         }
     }
 
@@ -99,12 +99,15 @@ class MyArrayList<T> {
     }
 
     public void RetainAll(T[] array) {
-        if (array == null)
-            throw new ArgumentNullException("Массива не существует");
-        foreach (T x in elementData) {
+        for (int i = size - 1; i >= 0; i--) {
             bool ok = false;
-            foreach (T y in array) if (x.Equals(y)) ok = true;
-            if (!ok) Remove(x);
+            foreach (T y in array) {
+                if (Comparer.Equals(elementData[i], y)) {
+                    ok = true;
+                    break;
+                }
+            }
+            if (!ok) RemoveIndex(i);
         }
     }
 
@@ -134,11 +137,24 @@ class MyArrayList<T> {
     public void AddAll(int i, T[] array) {
         if (array == null)
             throw new ArgumentNullException("Массива не существует");
-        foreach (T x in array) Add(i, x);
+        if (i < 0 || i > size)
+            throw new ArgumentOutOfRangeException("Выход за пределы массива");
+    
+        if (size + array.Length > capacity) {
+            while (size + array.Length > capacity) {
+                Resize();
+            }
+        }
+    
+        Array.Copy(elementData, i, elementData, i + array.Length, size - i);
+    
+        Array.Copy(array, 0, elementData, i, array.Length);
+    
+        size += array.Length;
     }
 
     public T Get(int i) {
-        if (i < 0 ||  i > size)
+        if (i < 0 ||  i >= size)
             throw new ArgumentOutOfRangeException("Выход за пределы массива");
         return elementData[i];
     }
@@ -153,12 +169,12 @@ class MyArrayList<T> {
 
     public int LastIndexOf(T x) {
         int ans = -1;
-        for (int i = 0; i < size; i++) if (elementData[i].Equals(x)) ans = i;
+        for (int i = 0; i < size; i++) if (Comparer.Equals(elementData[i], x)) ans = i;
         return ans;
     }
 
     public T RemoveIndex(int i) {
-        if (i < 0 ||  i > size)
+        if (i < 0 ||  i >= size)
             throw new ArgumentOutOfRangeException("Выход за пределы массива");
         T ans = elementData[i];
         size--;
@@ -168,7 +184,7 @@ class MyArrayList<T> {
 
 
     public void Set(int i, T x) {
-        if (i < 0 ||  i > size)
+        if (i < 0 ||  i >= size)
             throw new ArgumentOutOfRangeException("Выход за пределы массива");
         elementData[i] = x;
     }
@@ -314,6 +330,8 @@ public class Program {
         int removed = list.RemoveIndex(3);
         
         Console.WriteLine($"Удален элемент на позиции 3: {removed}");
+        
+        Console.WriteLine();
         
         for (int i = 0; i < list.Size(); i++) Console.Write(list.Get(i) + " ");
         Console.WriteLine();
