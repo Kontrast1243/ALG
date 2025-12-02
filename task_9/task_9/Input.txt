@@ -1,0 +1,6 @@
+<html><body><H1>Title</H1></body></html>
+<PrIvet>text</privet>SomeText</BOdy>
+<item1><Item1><ITEM1></item1>
+</Html><HTMl><hTmL>
+<abc123>Wrong<1abc>GoodTag</GoodTAG>
+</goodtag>
