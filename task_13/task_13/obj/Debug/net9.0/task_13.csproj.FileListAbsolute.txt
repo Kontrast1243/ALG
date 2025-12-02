@@ -1,0 +1,14 @@
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/bin/Debug/net9.0/task_13
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/bin/Debug/net9.0/task_13.deps.json
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/bin/Debug/net9.0/task_13.runtimeconfig.json
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/bin/Debug/net9.0/task_13.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/bin/Debug/net9.0/task_13.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.AssemblyInfoInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.AssemblyInfo.cs
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.csproj.CoreCompileInputs.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/refint/task_13.dll
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.pdb
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/task_13.genruntimeconfig.cache
+/Users/mihailprohorov/Desktop/учеба/C#/task_13/task_13/obj/Debug/net9.0/ref/task_13.dll
